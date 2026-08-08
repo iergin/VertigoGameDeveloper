@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Vertigo.Data;
 using Vertigo.Domain.Spin;
 using Vertigo.Domain.StateMachine;
 
@@ -17,7 +18,7 @@ namespace Vertigo.Presentation.Game.States
         {
             _ctx.Wheel.SetInteractable(false);
 
-            List<SliceModel> slices = _ctx.CurrentWheelConfig.ToSlices();
+            List<SliceModel> slices = WheelConfigSO.ToModels(_ctx.CurrentSlices);
             SpinResult result = _ctx.Resolver.Resolve(slices, _ctx.CurrentZone);
 
             _ctx.Wheel.SpinTo(result.SliceIndex, () =>

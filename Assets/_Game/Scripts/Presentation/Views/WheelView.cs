@@ -26,19 +26,19 @@ namespace Vertigo.Presentation.Views
         private readonly List<WheelSliceView> _items = new List<WheelSliceView>();
         private int _sliceCount;
 
-        public void Build(WheelConfigSO wheel)
+        public void Build(IReadOnlyList<SliceConfig> slices, Sprite baseSprite)
         {
             ClearSlices();
 
-            if (_baseImage != null && wheel.BaseSprite != null)
-                _baseImage.sprite = wheel.BaseSprite;
+            if (_baseImage != null && baseSprite != null)
+                _baseImage.sprite = baseSprite;
 
-            _sliceCount = wheel.SliceCount;
+            _sliceCount = slices.Count;
             float step = 360f / _sliceCount;
 
             for (int i = 0; i < _sliceCount; i++)
             {
-                SliceConfig slice = wheel.Slices[i];
+                SliceConfig slice = slices[i];
                 WheelSliceView item = Instantiate(_sliceItemPrefab, _sliceContainer);
                 item.name = $"ui_wheel_slice_{i}";
 

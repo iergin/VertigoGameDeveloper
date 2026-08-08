@@ -31,6 +31,7 @@ namespace Vertigo.Presentation.Game
             var scaler = new GeometricRewardScaler(_config.RewardGrowthPerZone);
             int? seed = _config.UseFixedSeed ? _config.Seed : (int?)null;
             var resolver = new SpinResolver(scaler, seed);
+            var sampler = new WheelSampler(seed);
 
             var wallet = new RewardWallet();
             _machine = new StateMachine();
@@ -39,7 +40,7 @@ namespace Vertigo.Presentation.Game
             _walletView.Initialize(wallet, _catalog);
 
             var context = new GameContext(
-                _config, classifier, resolver, wallet, _machine,
+                _config, classifier, resolver, sampler, wallet, _machine,
                 _wheelView, _zoneBarView, _buttonsView, _resultView);
 
             _machine.ChangeState(new IdleState(context));

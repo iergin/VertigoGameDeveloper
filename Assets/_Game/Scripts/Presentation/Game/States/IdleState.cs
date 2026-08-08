@@ -5,6 +5,8 @@ namespace Vertigo.Presentation.Game.States
 {
     public sealed class IdleState : StateBase
     {
+        private const int WheelSlotCount = 8;
+
         private readonly GameContext _ctx;
 
         public IdleState(GameContext ctx)
@@ -17,7 +19,8 @@ namespace Vertigo.Presentation.Game.States
             ZoneType type = _ctx.CurrentZoneType;
             var config = _ctx.CurrentWheelConfig;
 
-            _ctx.Wheel.Build(config);
+            _ctx.CurrentSlices = _ctx.Sampler.Sample(config.Slices, WheelSlotCount);
+            _ctx.Wheel.Build(_ctx.CurrentSlices, config.BaseSprite);
             _ctx.ZoneBar.SetZone(_ctx.CurrentZone, type);
             _ctx.Wheel.SetInteractable(true);
 

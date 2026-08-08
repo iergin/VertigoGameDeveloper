@@ -15,34 +15,62 @@ MonoBehaviour:
   _baseSprite: {fileID: 21300000, guid: 40b1c1c799a2a4fe2b47b24de0a2a4f1, type: 3}
   _slices:
   - _isBomb: 0
-    _reward: {fileID: 11400000, guid: 41f7e531d76da19131e95de9134cd90e, type: 2}
-    _baseAmount: 2
-    _weight: 1
-  - _isBomb: 0
     _reward: {fileID: 11400000, guid: 9fe9a8279541de669b58d58e975950f6, type: 2}
+    _baseAmount: 250
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: e6b93baaf273199cd1264370b9afd083, type: 2}
+    _baseAmount: 300
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 4c8d3bca5193370e7bfdbf03356d30e5, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 4ba84734f7654af4951a218b22e3836a, type: 2}
     _baseAmount: 2
     _weight: 1
   - _isBomb: 0
-    _reward: {fileID: 11400000, guid: 15059fab53ccada92352efd995840a94, type: 2}
+    _reward: {fileID: 11400000, guid: 2d3161bad04b0115a0b2178ed5690d56, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 43ba50f8d7a58894e938dfa88bad3de3, type: 2}
     _baseAmount: 10
     _weight: 1
   - _isBomb: 0
-    _reward: {fileID: 11400000, guid: e6b93baaf273199cd1264370b9afd083, type: 2}
-    _baseAmount: 200
+    _reward: {fileID: 11400000, guid: 42e7e02301ff8e0b27f62b388da93089, type: 2}
+    _baseAmount: 10
     _weight: 1
   - _isBomb: 0
-    _reward: {fileID: 11400000, guid: 9fe9a8279541de669b58d58e975950f6, type: 2}
+    _reward: {fileID: 11400000, guid: 9d934fc31677b3ae3611172b1e9ca351, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 392312fac22d54286ea165b5a378cfa9, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 15059fab53ccada92352efd995840a94, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 1f2d1ee4f3d41b762aa0dd35e531b110, type: 2}
     _baseAmount: 2
     _weight: 1
   - _isBomb: 0
-    _reward: {fileID: 11400000, guid: e6b93baaf273199cd1264370b9afd083, type: 2}
-    _baseAmount: 200
-    _weight: 1
-  - _isBomb: 0
-    _reward: {fileID: 11400000, guid: d8c911e50536e884dec7a4db57e92ea2, type: 2}
+    _reward: {fileID: 11400000, guid: 875dac9f4ad00c7169998efe8439c7c8, type: 2}
     _baseAmount: 2
     _weight: 1
   - _isBomb: 0
-    _reward: {fileID: 11400000, guid: 41f7e531d76da19131e95de9134cd90e, type: 2}
-    _baseAmount: 3
+    _reward: {fileID: 11400000, guid: 95a5366bfbcda61771e540749a085e84, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: 2abd159289f1ae4db3f68777b92c3ef3, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _isBomb: 0
+    _reward: {fileID: 11400000, guid: c3f16871743f4759da3ba188c48cc296, type: 2}
+    _baseAmount: 1
     _weight: 1

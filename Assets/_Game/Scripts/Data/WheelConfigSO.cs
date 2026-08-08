@@ -20,10 +20,12 @@ namespace Vertigo.Data
         public IReadOnlyList<SliceConfig> Slices => _slices;
         public int SliceCount => _slices.Count;
 
-        public List<SliceModel> ToSlices()
+        public List<SliceModel> ToSlices() => ToModels(_slices);
+
+        public static List<SliceModel> ToModels(IReadOnlyList<SliceConfig> slices)
         {
-            var models = new List<SliceModel>(_slices.Count);
-            foreach (SliceConfig slice in _slices)
+            var models = new List<SliceModel>(slices.Count);
+            foreach (SliceConfig slice in slices)
             {
                 if (slice.IsBomb)
                 {

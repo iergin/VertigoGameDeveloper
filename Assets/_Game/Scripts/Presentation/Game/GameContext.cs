@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Vertigo.Data;
 using Vertigo.Domain.Rewards;
 using Vertigo.Domain.Spin;
@@ -12,6 +13,7 @@ namespace Vertigo.Presentation.Game
         public GameConfigSO Config { get; }
         public IntervalZoneClassifier Classifier { get; }
         public SpinResolver Resolver { get; }
+        public WheelSampler Sampler { get; }
         public RewardWallet RunWallet { get; }
         public StateMachine Machine { get; }
 
@@ -22,10 +24,13 @@ namespace Vertigo.Presentation.Game
 
         public int CurrentZone { get; set; } = 1;
 
+        public IReadOnlyList<SliceConfig> CurrentSlices { get; set; }
+
         public GameContext(
             GameConfigSO config,
             IntervalZoneClassifier classifier,
             SpinResolver resolver,
+            WheelSampler sampler,
             RewardWallet runWallet,
             StateMachine machine,
             WheelView wheel,
@@ -36,6 +41,7 @@ namespace Vertigo.Presentation.Game
             Config = config;
             Classifier = classifier;
             Resolver = resolver;
+            Sampler = sampler;
             RunWallet = runWallet;
             Machine = machine;
             Wheel = wheel;
