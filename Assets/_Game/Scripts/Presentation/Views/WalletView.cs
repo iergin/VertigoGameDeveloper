@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Vertigo.Data;
 using Vertigo.Domain.Rewards;
 
@@ -46,6 +47,9 @@ namespace Vertigo.Presentation.Views
                 entry.SetIcon(_catalog != null ? _catalog.IconFor(rewardId) : null);
                 entry.SetCount(_wallet != null ? _wallet.AmountOf(rewardId) : 0);
                 _entries[rewardId] = entry;
+
+                Canvas.ForceUpdateCanvases();
+                LayoutRebuilder.ForceRebuildLayoutImmediate(_content);
             }
             return entry.IconRect;
         }
