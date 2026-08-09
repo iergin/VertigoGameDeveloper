@@ -13,6 +13,7 @@ namespace Vertigo.Presentation.Views
         [Header("Structure")]
         [SerializeField] private RectTransform _rotor;
         [SerializeField] private Image _baseImage;
+        [SerializeField] private Image _indicatorImage;
         [SerializeField] private RectTransform _sliceContainer;
         [SerializeField] private WheelSliceView _sliceItemPrefab;
         [SerializeField] private Sprite _bombIcon;
@@ -26,12 +27,15 @@ namespace Vertigo.Presentation.Views
         private readonly List<WheelSliceView> _items = new List<WheelSliceView>();
         private int _sliceCount;
 
-        public void Build(IReadOnlyList<SliceConfig> slices, Sprite baseSprite)
+        public void Build(IReadOnlyList<SliceConfig> slices, Sprite baseSprite, Sprite indicatorSprite)
         {
             ClearSlices();
 
             if (_baseImage != null && baseSprite != null)
                 _baseImage.sprite = baseSprite;
+
+            if (_indicatorImage != null && indicatorSprite != null)
+                _indicatorImage.sprite = indicatorSprite;
 
             _sliceCount = slices.Count;
             float step = 360f / _sliceCount;

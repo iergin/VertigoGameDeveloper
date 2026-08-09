@@ -20,7 +20,7 @@ namespace Vertigo.Presentation.Game.States
             var config = _ctx.CurrentWheelConfig;
 
             _ctx.CurrentSlices = _ctx.Sampler.Sample(config.Slices, WheelSlotCount);
-            _ctx.Wheel.Build(_ctx.CurrentSlices, config.BaseSprite);
+            _ctx.Wheel.Build(_ctx.CurrentSlices, config.BaseSprite, config.IndicatorSprite);
             _ctx.ZoneBar.SetZone(_ctx.CurrentZone, type);
             _ctx.Wheel.SetInteractable(true);
 

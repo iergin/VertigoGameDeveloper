@@ -13,10 +13,14 @@ namespace Vertigo.Data
         [Tooltip("Wheel base sprite (bronze/silver/golden). This asset carries the tier.")]
         [SerializeField] private Sprite _baseSprite;
 
+        [Tooltip("Indicator sprite that points at the winning slice.")]
+        [SerializeField] private Sprite _indicatorSprite;
+
         [Tooltip("Wheel slices (clockwise), in the order shown in the mockup.")]
         [SerializeField] private List<SliceConfig> _slices = new List<SliceConfig>();
 
         public Sprite BaseSprite => _baseSprite;
+        public Sprite IndicatorSprite => _indicatorSprite;
         public IReadOnlyList<SliceConfig> Slices => _slices;
         public int SliceCount => _slices.Count;
 
