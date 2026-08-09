@@ -2323,6 +2323,7 @@ GameObject:
   - component: {fileID: 1316393041}
   - component: {fileID: 1316393040}
   - component: {fileID: 1316393038}
+  - component: {fileID: 1316393042}
   m_Layer: 5
   m_Name: ui_panel_wallet
   m_TagString: Untagged
@@ -2344,6 +2345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vertigo.Presentation::Vertigo.Presentation.Views.WalletView
   _content: {fileID: 1756123254}
   _entryPrefab: {fileID: 5209451048713373193, guid: 79500b7b2924b4c06abe76e5be379862, type: 3}
+  _countUpDuration: 0.4
 --- !u!224 &1316393039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2402,6 +2404,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316393037}
   m_CullTransparentMesh: 1
+--- !u!114 &1316393042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316393037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Mask
+  m_ShowMaskGraphic: 1
 --- !u!1 &1340295944
 GameObject:
   m_ObjectHideFlags: 0

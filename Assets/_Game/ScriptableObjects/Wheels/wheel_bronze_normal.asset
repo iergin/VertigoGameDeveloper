@@ -25,15 +25,15 @@ MonoBehaviour:
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: a75bffe320cbbbdad63a439b0d18f51d, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: f1733e6b2ad089184db785e4ae83154b, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 4ba84734f7654af4951a218b22e3836a, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 3d6d23b7793357699eba8b2b82111ae8, type: 2}
@@ -45,7 +45,7 @@ MonoBehaviour:
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: d7356e25a18da218879474786ea4a6e1, type: 2}
-    _baseAmount: 3
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 4fa1470afb4b4ecbf37a9d3e4e0bb23c, type: 2}
@@ -69,29 +69,29 @@ MonoBehaviour:
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: a21126cfe03a3663e78e9480ec3d833a, type: 2}
-    _baseAmount: 2
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 646aef1e725405c41c83f34f14d09976, type: 2}
-    _baseAmount: 2
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: fd0730f07d973e9138fab60566a074ae, type: 2}
-    _baseAmount: 2
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: d8c911e50536e884dec7a4db57e92ea2, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 2abd159289f1ae4db3f68777b92c3ef3, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 9d934fc31677b3ae3611172b1e9ca351, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 1
     _reward: {fileID: 0}
-    _baseAmount: 0
+    _baseAmount: 5
     _weight: 1

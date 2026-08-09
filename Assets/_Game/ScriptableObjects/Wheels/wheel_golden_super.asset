@@ -25,41 +25,41 @@ MonoBehaviour:
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 41f7e531d76da19131e95de9134cd90e, type: 2}
-    _baseAmount: 2
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 4ae22749090aed796b5226bf1243a60c, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 2d3161bad04b0115a0b2178ed5690d56, type: 2}
-    _baseAmount: 2
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 04465f52e4715f4504ef9304731e81b8, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 4feb97f7588d377e4eff4cc81132fb75, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 627b115464cd0652fd1ff3714920bf73, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 15059fab53ccada92352efd995840a94, type: 2}
-    _baseAmount: 2
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 7353180070f300158a72994fa3905c70, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: c3f16871743f4759da3ba188c48cc296, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1
   - _isBomb: 0
     _reward: {fileID: 11400000, guid: 95a5366bfbcda61771e540749a085e84, type: 2}
-    _baseAmount: 1
+    _baseAmount: 5
     _weight: 1

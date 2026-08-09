@@ -11,6 +11,7 @@ namespace Vertigo.Presentation.Views
     {
         [SerializeField] private RectTransform _content;
         [SerializeField] private WalletEntryView _entryPrefab;
+        [SerializeField, Min(0f)] private float _countUpDuration = 0.4f;
 
         private readonly Dictionary<string, WalletEntryView> _entries = new Dictionary<string, WalletEntryView>();
         private RewardWallet _wallet;
@@ -57,7 +58,7 @@ namespace Vertigo.Presentation.Views
         public void RefreshCount(string rewardId)
         {
             if (_entries.TryGetValue(rewardId, out WalletEntryView entry))
-                entry.SetCount(_wallet != null ? _wallet.AmountOf(rewardId) : 0);
+                entry.SetCountAnimated(_wallet != null ? _wallet.AmountOf(rewardId) : 0, _countUpDuration);
         }
 
         private void ClearEntries()
