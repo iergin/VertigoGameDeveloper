@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: atlas_items_chests
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 1
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ad7c728e5451a4bf2a2b5374794aefe7, type: 3}
+    - {fileID: 2800000, guid: 8b23212aa55dd4db1b5ecf67a40c485a, type: 3}
+    - {fileID: 2800000, guid: dbcb9ebb083f34542979e17902c229e8, type: 3}
+    - {fileID: 2800000, guid: 326a67850dfdc4303b11cd5e90d57c85, type: 3}
+    - {fileID: 2800000, guid: 41a66746fa45743109032963a473cf30, type: 3}
+    - {fileID: 2800000, guid: 4f3218920cc68466286fecf14aeb7e71, type: 3}
+    - {fileID: 2800000, guid: 427fde7ced15742b7aa56c366d9b6ec1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 4f3218920cc68466286fecf14aeb7e71: 21300000
+    - 326a67850dfdc4303b11cd5e90d57c85: 21300000
+    - 41a66746fa45743109032963a473cf30: 21300000
+    - 8b23212aa55dd4db1b5ecf67a40c485a: 21300000
+    - dbcb9ebb083f34542979e17902c229e8: 21300000
+    - 427fde7ced15742b7aa56c366d9b6ec1: 21300000
+    - ad7c728e5451a4bf2a2b5374794aefe7: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4f3218920cc68466286fecf14aeb7e71, type: 3}
+  - {fileID: 21300000, guid: 326a67850dfdc4303b11cd5e90d57c85, type: 3}
+  - {fileID: 21300000, guid: 41a66746fa45743109032963a473cf30, type: 3}
+  - {fileID: 21300000, guid: 8b23212aa55dd4db1b5ecf67a40c485a, type: 3}
+  - {fileID: 21300000, guid: dbcb9ebb083f34542979e17902c229e8, type: 3}
+  - {fileID: 21300000, guid: 427fde7ced15742b7aa56c366d9b6ec1, type: 3}
+  - {fileID: 21300000, guid: ad7c728e5451a4bf2a2b5374794aefe7, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - UI_icon_chest_standart_nolight
+  - UI_icon_chest_silver_nolight
+  - UI_icon_chest_small_noligt
+  - UI_icon_chest_big_nolight
+  - UI_icon_chest_gold_nolight
+  - UI_icon_chest_super_nolight
+  - UI_icon_chest_Bronze_nolight
+  m_RenderDataMap: {}
+  m_Tag: atlas_items_chests
+  m_IsVariant: 0
