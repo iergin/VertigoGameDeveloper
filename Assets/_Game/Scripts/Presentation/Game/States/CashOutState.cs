@@ -1,5 +1,3 @@
-using System.Text;
-using Vertigo.Domain.Rewards;
 using Vertigo.Domain.StateMachine;
 
 namespace Vertigo.Presentation.Game.States
@@ -15,7 +13,7 @@ namespace Vertigo.Presentation.Game.States
 
         public override void Enter()
         {
-            _ctx.Result.ShowCashOut(BuildSummary(), OnDismiss);
+            _ctx.Result.ShowCashOut(_ctx.RunWallet.Snapshot(), _ctx.Catalog, OnDismiss);
         }
 
         public override void Exit()
@@ -28,17 +26,5 @@ namespace Vertigo.Presentation.Game.States
             _ctx.ResetRun();
             _ctx.Machine.ChangeState(new IdleState(_ctx));
         }
-
-        private string BuildSummary()
-        {
-            if (_ctx.RunWallet.IsEmpty)
-                return "Henüz ödül toplamadın.";
-
-            var sb = new StringBuilder();
-            foreach (RewardGrant grant in _ctx.RunWallet.Snapshot())
-                sb.AppendLine($"{grant.RewardId}  x{grant.Amount}");
-            return sb.ToString().TrimEnd();
-        }
     }
 }
-

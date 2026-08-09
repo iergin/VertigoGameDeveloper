@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Vertigo.Data;
+using Vertigo.Domain.Rewards;
 
 namespace Vertigo.Presentation.Views
 {
@@ -12,7 +15,10 @@ namespace Vertigo.Presentation.Views
         [SerializeField] private TMP_Text _titleText;
         [SerializeField] private TMP_Text _bodyText;
         [SerializeField] private Button _dismissButton;
+        [SerializeField] private RectTransform _rewardsContainer;
+        [SerializeField] private WalletEntryView _rewardEntryPrefab;
 
+        private readonly List<WalletEntryView> _rewardEntries = new List<WalletEntryView>();
         private Action _onDismiss;
 
         private void Awake()
@@ -28,26 +34,52 @@ namespace Vertigo.Presentation.Views
 
         public void ShowBomb(Action onDismiss)
         {
-            Show("BOOM!", "You hit the bomb — all your rewards are gone.\nStart over!", onDismiss);
+            _onDismiss = onDismiss;
+            _titleText.text = "BOOM!";
+            if (_bodyText != null)
+                _bodyText.text = "You hit the bomb — all your rewards are gone.\nStart over!";
+            ClearRewardEntries();
+            if (_root != null) _root.SetActive(true);
         }
 
-        public void ShowCashOut(string summary, Action onDismiss)
+        public void ShowCashOut(IReadOnlyList<RewardGrant> rewards, RewardCatalogSO catalog, Action onDismiss)
         {
-            Show("Rewards Claimed!", summary, onDismiss);
+            _onDismiss = onDismiss;
+            _titleText.text = "Rewards Claimed!";
+            if (_bodyText != null)
+                _bodyText.text = string.Empty;
+            BuildRewardEntries(rewards, catalog);
+            if (_root != null) _root.SetActive(true);
         }
 
         public void Hide()
         {
             _onDismiss = null;
+            ClearRewardEntries();
             if (_root != null) _root.SetActive(false);
         }
 
-        private void Show(string title, string body, Action onDismiss)
+        private void BuildRewardEntries(IReadOnlyList<RewardGrant> rewards, RewardCatalogSO catalog)
         {
-            _onDismiss = onDismiss;
-            _titleText.text = title;
-            _bodyText.text = body;
-            if (_root != null) _root.SetActive(true);
+            ClearRewardEntries();
+            if (_rewardsContainer == null || _rewardEntryPrefab == null || rewards == null)
+                return;
+
+            foreach (RewardGrant grant in rewards)
+            {
+                WalletEntryView entry = Instantiate(_rewardEntryPrefab, _rewardsContainer);
+                entry.SetIcon(catalog != null ? catalog.IconFor(grant.RewardId) : null);
+                entry.SetCount(grant.Amount);
+                _rewardEntries.Add(entry);
+            }
+        }
+
+        private void ClearRewardEntries()
+        {
+            for (int i = 0; i < _rewardEntries.Count; i++)
+                if (_rewardEntries[i] != null)
+                    Destroy(_rewardEntries[i].gameObject);
+            _rewardEntries.Clear();
         }
 
         private void HandleDismiss()
@@ -65,4 +97,3 @@ namespace Vertigo.Presentation.Views
 #endif
     }
 }
-
