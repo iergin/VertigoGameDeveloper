@@ -22,6 +22,7 @@ namespace Vertigo.Presentation.Game
         [SerializeField] private GameButtonsView _buttonsView;
         [SerializeField] private ResultPopupView _resultView;
         [SerializeField] private WalletView _walletView;
+        [SerializeField] private RewardCollectAnimator _collectAnimator;
 
         private StateMachine _machine;
 
@@ -41,7 +42,8 @@ namespace Vertigo.Presentation.Game
 
             var context = new GameContext(
                 _config, classifier, resolver, sampler, wallet, _machine,
-                _wheelView, _zoneBarView, _buttonsView, _resultView);
+                _wheelView, _zoneBarView, _buttonsView, _resultView,
+                _walletView, _collectAnimator, _catalog);
 
             _machine.ChangeState(new IdleState(context));
         }

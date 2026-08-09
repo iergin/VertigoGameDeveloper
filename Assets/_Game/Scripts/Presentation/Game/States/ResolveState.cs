@@ -22,9 +22,7 @@ namespace Vertigo.Presentation.Game.States
                 return;
             }
 
-            _ctx.RunWallet.Add(_result.Reward);
-            _ctx.CurrentZone++;
-            _ctx.Machine.ChangeState(new IdleState(_ctx));
+            _ctx.Machine.ChangeState(new CollectState(_ctx, _result));
         }
     }
 }

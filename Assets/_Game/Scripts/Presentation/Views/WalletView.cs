@@ -11,48 +11,57 @@ namespace Vertigo.Presentation.Views
         [SerializeField] private RectTransform _content;
         [SerializeField] private WalletEntryView _entryPrefab;
 
-        private readonly List<WalletEntryView> _entries = new List<WalletEntryView>();
+        private readonly Dictionary<string, WalletEntryView> _entries = new Dictionary<string, WalletEntryView>();
         private RewardWallet _wallet;
         private RewardCatalogSO _catalog;
 
         public void Initialize(RewardWallet wallet, RewardCatalogSO catalog)
         {
             if (_wallet != null)
-                _wallet.Changed -= Rebuild;
+                _wallet.Changed -= OnWalletChanged;
 
             _wallet = wallet;
             _catalog = catalog;
-            _wallet.Changed += Rebuild;
-            Rebuild();
+            _wallet.Changed += OnWalletChanged;
+            ClearEntries();
         }
 
         private void OnDestroy()
         {
             if (_wallet != null)
-                _wallet.Changed -= Rebuild;
+                _wallet.Changed -= OnWalletChanged;
         }
 
-        private void Rebuild()
+        private void OnWalletChanged()
         {
-            ClearEntries();
-            if (_wallet == null) return;
+            if (_wallet.IsEmpty)
+                ClearEntries();
+        }
 
-            foreach (RewardGrant grant in _wallet.Snapshot())
+        public RectTransform EnsureEntry(string rewardId)
+        {
+            if (!_entries.TryGetValue(rewardId, out WalletEntryView entry))
             {
-                WalletEntryView entry = Instantiate(_entryPrefab, _content);
-                Sprite icon = _catalog != null ? _catalog.IconFor(grant.RewardId) : null;
-                entry.Set(icon, grant.Amount);
-                _entries.Add(entry);
+                entry = Instantiate(_entryPrefab, _content);
+                entry.SetIcon(_catalog != null ? _catalog.IconFor(rewardId) : null);
+                entry.SetCount(_wallet != null ? _wallet.AmountOf(rewardId) : 0);
+                _entries[rewardId] = entry;
             }
+            return entry.IconRect;
+        }
+
+        public void RefreshCount(string rewardId)
+        {
+            if (_entries.TryGetValue(rewardId, out WalletEntryView entry))
+                entry.SetCount(_wallet != null ? _wallet.AmountOf(rewardId) : 0);
         }
 
         private void ClearEntries()
         {
-            for (int i = 0; i < _entries.Count; i++)
-                if (_entries[i] != null)
-                    Destroy(_entries[i].gameObject);
+            foreach (var pair in _entries)
+                if (pair.Value != null)
+                    Destroy(pair.Value.gameObject);
             _entries.Clear();
         }
     }
 }
-

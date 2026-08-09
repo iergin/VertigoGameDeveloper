@@ -21,6 +21,9 @@ namespace Vertigo.Presentation.Game
         public ZoneBarView ZoneBar { get; }
         public GameButtonsView Buttons { get; }
         public ResultPopupView Result { get; }
+        public WalletView WalletView { get; }
+        public RewardCollectAnimator CollectAnimator { get; }
+        public RewardCatalogSO Catalog { get; }
 
         public int CurrentZone { get; set; } = 1;
 
@@ -36,7 +39,10 @@ namespace Vertigo.Presentation.Game
             WheelView wheel,
             ZoneBarView zoneBar,
             GameButtonsView buttons,
-            ResultPopupView result)
+            ResultPopupView result,
+            WalletView walletView,
+            RewardCollectAnimator collectAnimator,
+            RewardCatalogSO catalog)
         {
             Config = config;
             Classifier = classifier;
@@ -48,6 +54,9 @@ namespace Vertigo.Presentation.Game
             ZoneBar = zoneBar;
             Buttons = buttons;
             Result = result;
+            WalletView = walletView;
+            CollectAnimator = collectAnimator;
+            Catalog = catalog;
         }
 
         public ZoneType CurrentZoneType => Classifier.Classify(CurrentZone);

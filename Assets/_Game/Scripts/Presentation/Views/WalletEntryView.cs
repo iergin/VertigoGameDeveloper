@@ -10,10 +10,16 @@ namespace Vertigo.Presentation.Views
         [SerializeField] private Image _iconImage;
         [SerializeField] private TMP_Text _amountText;
 
-        public void Set(Sprite icon, int amount)
+        public RectTransform IconRect => (RectTransform)_iconImage.transform;
+
+        public void SetIcon(Sprite icon)
         {
             _iconImage.sprite = icon;
             _iconImage.enabled = icon != null;
+        }
+
+        public void SetCount(int amount)
+        {
             _amountText.text = $"x{amount}";
         }
 

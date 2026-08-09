@@ -93,6 +93,13 @@ namespace Vertigo.Presentation.Views
         {
         }
 
+        public Vector3 SliceWorldPosition(int index)
+        {
+            if (index < 0 || index >= _items.Count || _items[index] == null)
+                return _rotor.position;
+            return _items[index].RectTransform.position;
+        }
+
         private void ClearSlices()
         {
             for (int i = 0; i < _items.Count; i++)
