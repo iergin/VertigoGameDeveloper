@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Devam
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2830,6 +2830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vertigo.Presentation.Views.RewardCollectAnimator
   _settings: {fileID: 11400000, guid: d16a419fc22eb4e7cb34f0aa768580c2, type: 2}
+  _flyItemPrefab: {fileID: 4960292640757736253, guid: c8bbe4e11e241443682055e5552d759d, type: 3}
   _flyLayer: {fileID: 99162673}
   _canvas: {fileID: 1231224017}
 --- !u!1 &1408412205

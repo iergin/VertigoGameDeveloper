@@ -28,12 +28,12 @@ namespace Vertigo.Presentation.Views
 
         public void ShowBomb(Action onDismiss)
         {
-            Show("BOOM!", "Bombaya bastın — tüm ödüller gitti.\nYeniden başla.", onDismiss);
+            Show("BOOM!", "You hit the bomb — all your rewards are gone.\nStart over!", onDismiss);
         }
 
         public void ShowCashOut(string summary, Action onDismiss)
         {
-            Show("Ödüller Alındı!", summary, onDismiss);
+            Show("Rewards Claimed!", summary, onDismiss);
         }
 
         public void Hide()

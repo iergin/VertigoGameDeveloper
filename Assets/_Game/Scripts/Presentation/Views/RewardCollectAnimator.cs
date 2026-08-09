@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 using Vertigo.Data;
 
 namespace Vertigo.Presentation.Views
@@ -11,12 +10,13 @@ namespace Vertigo.Presentation.Views
     public sealed class RewardCollectAnimator : MonoBehaviour
     {
         [SerializeField] private RewardAnimationSO _settings;
+        [SerializeField] private FlyRewardItem _flyItemPrefab;
         [SerializeField] private RectTransform _flyLayer;
         [SerializeField] private Canvas _canvas;
 
         public void Play(Sprite icon, Vector3 spawnWorldPos, RectTransform target, Action onComplete)
         {
-            if (_settings == null || _flyLayer == null || icon == null || target == null)
+            if (_settings == null || _flyItemPrefab == null || _flyLayer == null || icon == null || target == null)
             {
                 onComplete?.Invoke();
                 return;
@@ -60,18 +60,15 @@ namespace Vertigo.Presentation.Views
 
         private RectTransform CreateItem(Sprite icon, Vector2 localPos)
         {
-            var go = new GameObject("fly_reward", typeof(RectTransform), typeof(Image));
-            var rt = (RectTransform)go.transform;
-            rt.SetParent(_flyLayer, false);
+            FlyRewardItem item = Instantiate(_flyItemPrefab, _flyLayer);
+            item.SetIcon(icon);
+
+            RectTransform rt = item.Rect;
             rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
             rt.pivot = new Vector2(0.5f, 0.5f);
             rt.sizeDelta = new Vector2(_settings.ItemSize, _settings.ItemSize);
             rt.anchoredPosition = localPos;
             rt.localScale = Vector3.one * UnityEngine.Random.Range(_settings.ScaleMin, _settings.ScaleMax);
-
-            var image = go.GetComponent<Image>();
-            image.sprite = icon;
-            image.raycastTarget = false;
             return rt;
         }
 
